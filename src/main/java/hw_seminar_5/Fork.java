@@ -2,12 +2,13 @@ package hw_seminar_5;
 
 public class Fork {
 
-    private boolean free = true;
+    private boolean free;
     private int number;
 
 
 
     public Fork(int number) {
+        this.free = true;
         this.number = number;
     }
 
