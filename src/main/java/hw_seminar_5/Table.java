@@ -9,14 +9,13 @@ import java.util.concurrent.CountDownLatch;
 public class Table implements Runnable {
     private List<Fork> forkList;
     private final int COUNT_PHILLOSOPHER = 5;
-    private final int NEED_COUNT_EAT = 3;
     private List<Philosopher> philosopherList;
     private CountDownLatch cdlAll;
 
 
     public Table() {
 
-        this.cdlAll = new CountDownLatch(COUNT_PHILLOSOPHER * NEED_COUNT_EAT);
+        this.cdlAll = new CountDownLatch(COUNT_PHILLOSOPHER);
 
          this.forkList = new ArrayList<>(Arrays.asList(
                 new Fork(0),

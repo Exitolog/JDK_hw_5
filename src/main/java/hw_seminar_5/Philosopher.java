@@ -35,13 +35,12 @@ public class Philosopher implements Runnable {
                     System.out.println("Философ " + name + " поел " + countEat + " раз/раза и начал рассуждать о важном ");
                     Thread.sleep(300);
                     table.getForks(forkLeft.getNumber(), forkRight.getNumber());
-                    cldAll.countDown();
-
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        cldAll.countDown();
         System.err.println(name + " наелся");
     }
 }
