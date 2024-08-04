@@ -36,7 +36,7 @@ public class Table implements Runnable {
 
     }
 
-        public synchronized boolean takeForks(int leftFork, int rightFork){
+        public boolean takeForks(int leftFork, int rightFork){
             if(forkList.get(leftFork).isFree() && forkList.get(rightFork).isFree()){
                 forkList.get(leftFork).setFree(false);
                 forkList.get(rightFork).setFree(false);
@@ -44,6 +44,7 @@ public class Table implements Runnable {
             }
             return false;
         }
+
         public void getForks(int leftFork, int rightFork){
             forkList.get(leftFork).setFree(true);
             forkList.get(rightFork).setFree(true);

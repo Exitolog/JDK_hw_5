@@ -32,6 +32,8 @@ public class Philosopher implements Runnable {
                     Thread.sleep(3000);
                     countEat++;
                     System.out.println("Философ " + name + " поел " + countEat + " раз/раза и начал рассуждать о важном ");
+                    System.out.println("При этом взяв вилку " + forkLeft.getNumber() + " и " + forkRight.getNumber());
+                    Thread.sleep(300);
                     table.getForks(forkLeft.getNumber(), forkRight.getNumber());
                     cldAll.countDown();
 
@@ -41,9 +43,5 @@ public class Philosopher implements Runnable {
             }
         }
         System.err.println(name + " наелся");
-    }
-
-    public String getName() {
-        return name;
     }
 }
